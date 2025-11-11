@@ -101,22 +101,18 @@
 
     /* Tab Styles */
     .tabs {
-      display: flex;
-      margin: 30px 0 20px;
-      border-bottom: 1px solid #ddd;
-    }
+  display: flex;
+  margin: 30px 0 20px;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap; /* ← This makes tabs wrap on small screens */
+}
 
-    .tab {
-      padding: 10px 20px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1em;
-      color: #666;
-      transition: all 0.3s ease;
-      border-bottom: 2px solid transparent;
-    }
+.tab {
+  padding: 10px 15px;
+  /* ... other styles ... */
+  flex-grow: 1; /* ← This makes tabs evenly distribute space */
+  text-align: center; /* ← This centers tab text */
+}
 
     .tab:hover {
       color: #58c1e7;
@@ -127,10 +123,16 @@
       border-bottom: 2px solid #58c1e7;
       font-weight: bold;
     }
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s ease; /* This line adds the fade effect */
+}
 
-    .tab-content {
-      display: none;
-    }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+    
 
     .tab-content.active {
       display: block;
@@ -169,7 +171,7 @@
     <button class="tab active" onclick="openTab(event, 'education')">Education</button>
     <button class="tab" onclick="openTab(event, 'activities')">Activities</button>
     <button class="tab" onclick="openTab(event, 'awards')">Awards</button>
-    <button class="tab" onclick="openTab(event, 'projects')">Projects</button>
+    <button class="tab" onclick="openTab(event, 'writing')">Writing</button>
   </div>
 
   <!-- Tab Content -->
@@ -299,16 +301,35 @@
     </ul>
   </div>
 
-  <div id="projects" class="tab-content">
-    <h2>Projects</h2>
-    <p>Here you can add information about your projects. For example:</p>
-    <ul class="pubs">
-      <li>
-        <strong>Language Learning App</strong><br />
-        <em>Developer & Designer</em><br />
-        <p>Created a mobile application to help people learn endangered languages through interactive exercises and cultural content.</p>
-        <span><i>January 2024-Present</i></span>
-      </li>
+<div id="writing" class="tab-content">
+  <h2>Writing</h2>
+  <p>In my free time, I actively enjoy creative writing! Here is some of my selected work:</p>
+  
+  <ul class="pubs">
+    <li>
+      <strong>Smoke and Soy</strong><br />
+      <em>October 2025</em><br />
+      <button class="read-story-btn" onclick="toggleStory('smoke-and-soy')">Read Story ▼</button>
+      
+      <div id="smoke-and-soy" class="full-story" style="display: none;">
+        <div class="story-nav">
+          <button onclick="changeStoryPage('smoke-and-soy', -1)">← Previous</button>
+          <span class="page-indicator">Page 1 of 5</span>
+          <button onclick="changeStoryPage('smoke-and-soy', 1)">Next →</button>
+        </div>
+        
+        <div class="story-content">
+          <div class="story-page active" data-page="1">
+            <h3>Chapter 1</h3>
+            <p>[Your first page of text here...]</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          
+          <div class="story-page" data-page="2">
+            <h3>Chapter 2</h3>
+            <p>[Your second page of text here...]</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
       <li>
         <strong>Linguistic Database</strong><br />
         <em>Research Assistant</em><br />
