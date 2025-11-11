@@ -55,7 +55,6 @@
       margin-top: 1em;
     }
 
-
     .top-links {
       margin-top: 0.5em;
       font-size: 0.95em;
@@ -95,13 +94,47 @@
     .cat {
         width: 100px;
         border-radius: 10px;
-        float: right; /* or left */
-        margin-top: -20px; /* moves it up */
-        margin-left: 1em;  /* spacing from text */
+        float: right;
+        margin-top: -20px;
+        margin-left: 1em;
     }
 
+    /* Tab Styles */
+    .tabs {
+      display: flex;
+      margin: 30px 0 20px;
+      border-bottom: 1px solid #ddd;
+    }
 
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1em;
+      color: #666;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+    }
 
+    .tab:hover {
+      color: #58c1e7;
+    }
+
+    .tab.active {
+      color: #58c1e7;
+      border-bottom: 2px solid #58c1e7;
+      font-weight: bold;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -115,11 +148,10 @@
   </p>
 
   <p>
-    Langauges: English (Native), Japanese (Heritage/N2), Mandarin (Intermediate/HSK4), Korean (Intermediate-Mid/ACTFL)        
+    Languages: English (Native), Japanese (Heritage/N2), Mandarin (Intermediate/HSK4), Korean (Intermediate-Mid/ACTFL)        
   </p>
 
-
-  <p>If you’re working on something related or have ideas to share, I’d love to hear from you!</p>
+  <p>If you're working on something related or have ideas to share, I'd love to hear from you!</p>
 
   <div class="contact">
     andrewhaynes2026 [at] gmail [dot] com<br />
@@ -132,133 +164,182 @@
 
   <img class="cat" src="https://media.tenor.com/-unmMc78vT4AAAAi/white-cat.gif" alt="" />
 
-  <hr />
-
-  <h2>Education</h2>
-
-
-  <div class="edu-item">
-    <div class="edu-left">
-      College Park High School  
-      <em>The Woodlands, TX<br />/ Senior, Class of 2026</em>
-    </div>
-    <div class="edu-right">
-      <em><b>GPA:</b> 4.0/4.0 UW;</em>
-      <em><b>SAT:</b> 1590/1600 (800 EBRW / 790 M); <b>PSAT:</b> 1520/1520</em>
-      <p><b>Advanced Coursework:</b> AP English Language and Composition*, AP Computer Science A, AP Computer Science Principles,  
-            AP Chinese Language and Culture,  
-            AP Japanese Language and Culture,  
-            AP Psychology*,  
-            AP Statistics*,  
-            AP Calculus BC,  
-            AP Physics 1,  
-            AP Comparative Government and Politics*,  
-            AP United States Government and Politics,  
-            AP Human Geography,  
-            AP World History: Modern,  
-            AP European History*,  
-            AP United States History,  
-            AP Macroeconomics,  
-            AP Art History,  
-            AP Chemistry,
-            Organic Chemistry,  
-            AP Music Theory  </p>
-        <p> Courses denoted with a * were self-studied.</p>
-    </div>
-  </div>
-  
-  <div class="edu-item">
-    <div class="edu-left">
-      Lone Star Community College
-    </div>
-    <div class="edu-right2">
-      <p><b>Dual Enrollment:</b> Precalculus, English Language III</p>
-    </div>
+  <!-- Tab Navigation -->
+  <div class="tabs">
+    <button class="tab active" onclick="openTab(event, 'education')">Education</button>
+    <button class="tab" onclick="openTab(event, 'activities')">Activities</button>
+    <button class="tab" onclick="openTab(event, 'awards')">Awards</button>
+    <button class="tab" onclick="openTab(event, 'projects')">Projects</button>
   </div>
 
-  <p> </p>
+  <!-- Tab Content -->
+  <div id="education" class="tab-content active">
+    <h2>Education</h2>
 
-  <hr style="margin-top: 60px;" />
-
-  <h2>Activities</h2>
-
-  <ul class="pubs">
-    <li>
-      <strong>Critical Period Initiative</strong><br />
-      <em>Founder & Executive Director</em><br />
-      <p>Directed a team of 4 native bilingual high school students, coordinating efforts to create research-based bilingual books and lead weekly language immersion sessions for over 70 Conroe ISD students at 11 elementary school students
-    </p>
-      <span><i>May 2023-Present</i></span>
-    <li>
-      <strong>Indiana University & University of North Texas</strong><br />
-      <em>Computational Linguistics Research Assistant</em><br />
-      <p>Indiana University: Optimizing Optical Character Recognition algorithms for endangered languages such as Garo 
-      <p>University of North Texas: Exploring artificial intelligence as a tool for predicting word change in diachronic historical linguistics
-    </p>
-      <span><i>April 2025-Present</i></span>
-    </li>
-    <li>
-      <strong>National Security Language Initiative for Youth</strong><br />
-      <em>Finalist</em><br />
-      <p>Fully-funded Department of State merit scholarship to study Korean in Songdo, South Korea. Took 240+ hours of Korean class over 7 weeks while also living with Korean host family, improving from Novice Mid to Intermediate Mid (Oral Proficiency Interview)</p>
-      <span><i>May-July 2024</i></span>
-    </li>
-    <li>
-        <strong>BASABali </strong><br />
-        <em>Endangered Language Intern</em><br />
-        <p>Started and directed a successful Kickstarter campaign for Indonesian non-profit, raising over $12K for a language learning app focused on Balinese, Makassarese, and Banjarese languages. Submitted United Nations grant applications, promoting endangered language resources in Indonesia in order to secure funding and raise awareness</p>
-        <span><i>February-December 2024</i></span>
-    </li>
-    <li>
-        <strong>Summer Linguistics Institute for Youth Scholars	 </strong><br />
-        <em>Summer Scholar</em><br />
-        <p>Studied introductory linguistics concepts including psycholinguistics, language acquisition, and computational linguistics @ Ohio State University. Led linguistic elicitations in Latvian, systematically gathering and analyzing language data through structured interviews and exercises
-            </p>
-        <span><i>May-July 2023</i></span>
-    </li>
-    <li>
-        <strong>YouTube Subtitling</strong><br />
-        <em>Volunteer Japanese & Mandarin Translator</em><br />
-        <p>Proactively connected with Chinese YouTubers (Grace Guo & ShuoShuo Chinese) and self-taught Japanese translation using online tools. Contributed to increasing content accessibility for a growing audience, resulting in 1,000,000+ impressions and 500,000+ subscribers            
-            </p>
-        <span><i>November 2022-Present</i></span>
-    </li>
-    <li>
-        <strong>DECA</strong><br />
-        <em>District 4 President & College Park Vice President of Competition</em><br />
-        <p>Elected to lead a 1,000+ member district (District 4) spanning 30 counties in Texas. Organized leadership training, proliferated testing resources, and represented the district at regional and state events. Manage a 150+ member chapter (College Park High School) meetings as well as promotional efforts (Instagram, TikTok, etc.) 
+    <div class="edu-item">
+      <div class="edu-left">
+        College Park High School  
+        <em>The Woodlands, TX<br />/ Senior, Class of 2026</em>
+      </div>
+      <div class="edu-right">
+        <em><b>GPA:</b> 4.0/4.0 UW;</em>
+        <em><b>SAT:</b> 1590/1600 (800 EBRW / 790 M); <b>PSAT:</b> 1520/1520</em>
+        <p><b>Advanced Coursework:</b> AP English Language and Composition*, AP Computer Science A, AP Computer Science Principles,  
+              AP Chinese Language and Culture,  
+              AP Japanese Language and Culture,  
+              AP Psychology*,  
+              AP Statistics*,  
+              AP Calculus BC,  
+              AP Physics 1,  
+              AP Comparative Government and Politics*,  
+              AP United States Government and Politics,  
+              AP Human Geography,  
+              AP World History: Modern,  
+              AP European History*,  
+              AP United States History,  
+              AP Macroeconomics,  
+              AP Art History,  
+              AP Chemistry,
+              Organic Chemistry,  
+              AP Music Theory  </p>
+          <p> Courses denoted with a * were self-studied.</p>
+      </div>
+    </div>
     
-            </p>
-        <span><i>August 2022-Present</i></span>
-    </li>
-    <li>
-        <strong>National Japanese Honors Society</strong><br />
-        <em>Co-President</em><br />
-        <p>Organized volunteer opportunities, internal meetings, and school outreach programs at intermediate schools. Started classroom Japanese tutoring program to support students' language learning.            
-            </p>
-        <span><i>December 2024-Present</i></span>
-    </li>
-    <li>
-        <strong>Symphony Orchestra</strong><br />
-        <em>Vice President & Violinist</em><br />
-        <p>Oversaw 150+ member attendance records, managed communications, assisted in organizing performances, and supported leadership in logistical planning for the varsity orchestra. Performed as a violinist in ensemble, earning a Superior (1) rating and qualifying for the Texas State Solo & Ensemble Contest three times.
-            </p>
-        <span><i>August 2019-Present</i></span>
-    </li>
-  </ul>
-  
-  <hr style="margin-top: 57px;" />
+    <div class="edu-item">
+      <div class="edu-left">
+        Lone Star Community College
+      </div>
+      <div class="edu-right2">
+        <p><b>Dual Enrollment:</b> Precalculus, English Language III</p>
+      </div>
+    </div>
+  </div>
 
-  <h2>Awards & Honors</h2>
-  <ul>
-    <li>2024 Texas Japanese Speech Contest / <em>1st Award</em></li>
-    <li>2023 Houston Science & Engineering Fair / <em>1st Award</em></li>
-    <li>2023 Texas Science & Engineering Fair / <em>Finalist</em></li>
-    <li>2025 North American Computational Linguistic Olympiad (NACLO) / <em>Problem D Perfect Score</em></li>
-    <li>DECA International Career Development Conference / <em>Competitor x3 & Top 10 (10/168) Marketing Tester</em></li>
-    <li>Scholastic Writing & Art Awards / <em>Honorable Mention x2</em></li>
-    <li>AP Scholar with Distinction</li>
-  </ul>
+  <div id="activities" class="tab-content">
+    <h2>Activities</h2>
+
+    <ul class="pubs">
+      <li>
+        <strong>Critical Period Initiative</strong><br />
+        <em>Founder & Executive Director</em><br />
+        <p>Directed a team of 4 native bilingual high school students, coordinating efforts to create research-based bilingual books and lead weekly language immersion sessions for over 70 Conroe ISD students at 11 elementary school students
+      </p>
+        <span><i>May 2023-Present</i></span>
+      </li>
+      <li>
+        <strong>Indiana University & University of North Texas</strong><br />
+        <em>Computational Linguistics Research Assistant</em><br />
+        <p>Indiana University: Optimizing Optical Character Recognition algorithms for endangered languages such as Garo 
+        <p>University of North Texas: Exploring artificial intelligence as a tool for predicting word change in diachronic historical linguistics
+      </p>
+        <span><i>April 2025-Present</i></span>
+      </li>
+      <li>
+        <strong>National Security Language Initiative for Youth</strong><br />
+        <em>Finalist</em><br />
+        <p>Fully-funded Department of State merit scholarship to study Korean in Songdo, South Korea. Took 240+ hours of Korean class over 7 weeks while also living with Korean host family, improving from Novice Mid to Intermediate Mid (Oral Proficiency Interview)</p>
+        <span><i>May-July 2024</i></span>
+      </li>
+      <li>
+          <strong>BASABali </strong><br />
+          <em>Endangered Language Intern</em><br />
+          <p>Started and directed a successful Kickstarter campaign for Indonesian non-profit, raising over $12K for a language learning app focused on Balinese, Makassarese, and Banjarese languages. Submitted United Nations grant applications, promoting endangered language resources in Indonesia in order to secure funding and raise awareness</p>
+          <span><i>February-December 2024</i></span>
+      </li>
+      <li>
+          <strong>Summer Linguistics Institute for Youth Scholars</strong><br />
+          <em>Summer Scholar</em><br />
+          <p>Studied introductory linguistics concepts including psycholinguistics, language acquisition, and computational linguistics @ Ohio State University. Led linguistic elicitations in Latvian, systematically gathering and analyzing language data through structured interviews and exercises
+              </p>
+          <span><i>May-July 2023</i></span>
+      </li>
+      <li>
+          <strong>YouTube Subtitling</strong><br />
+          <em>Volunteer Japanese & Mandarin Translator</em><br />
+          <p>Proactively connected with Chinese YouTubers (Grace Guo & ShuoShuo Chinese) and self-taught Japanese translation using online tools. Contributed to increasing content accessibility for a growing audience, resulting in 1,000,000+ impressions and 500,000+ subscribers            
+              </p>
+          <span><i>November 2022-Present</i></span>
+      </li>
+      <li>
+          <strong>DECA</strong><br />
+          <em>District 4 President & College Park Vice President of Competition</em><br />
+          <p>Elected to lead a 1,000+ member district (District 4) spanning 30 counties in Texas. Organized leadership training, proliferated testing resources, and represented the district at regional and state events. Manage a 150+ member chapter (College Park High School) meetings as well as promotional efforts (Instagram, TikTok, etc.) 
+      
+              </p>
+          <span><i>August 2022-Present</i></span>
+      </li>
+      <li>
+          <strong>National Japanese Honors Society</strong><br />
+          <em>Co-President</em><br />
+          <p>Organized volunteer opportunities, internal meetings, and school outreach programs at intermediate schools. Started classroom Japanese tutoring program to support students' language learning.            
+              </p>
+          <span><i>December 2024-Present</i></span>
+      </li>
+      <li>
+          <strong>Symphony Orchestra</strong><br />
+          <em>Vice President & Violinist</em><br />
+          <p>Oversaw 150+ member attendance records, managed communications, assisted in organizing performances, and supported leadership in logistical planning for the varsity orchestra. Performed as a violinist in ensemble, earning a Superior (1) rating and qualifying for the Texas State Solo & Ensemble Contest three times.
+              </p>
+          <span><i>August 2019-Present</i></span>
+      </li>
+    </ul>
+  </div>
+
+  <div id="awards" class="tab-content">
+    <h2>Awards & Honors</h2>
+    <ul>
+      <li>2024 Texas Japanese Speech Contest / <em>1st Award</em></li>
+      <li>2023 Houston Science & Engineering Fair / <em>1st Award</em></li>
+      <li>2023 Texas Science & Engineering Fair / <em>Finalist</em></li>
+      <li>2025 North American Computational Linguistic Olympiad (NACLO) / <em>Problem D Perfect Score</em></li>
+      <li>DECA International Career Development Conference / <em>Competitor x3 & Top 10 (10/168) Marketing Tester</em></li>
+      <li>Scholastic Writing & Art Awards / <em>Honorable Mention x2</em></li>
+      <li>AP Scholar with Distinction</li>
+    </ul>
+  </div>
+
+  <div id="projects" class="tab-content">
+    <h2>Projects</h2>
+    <p>Here you can add information about your projects. For example:</p>
+    <ul class="pubs">
+      <li>
+        <strong>Language Learning App</strong><br />
+        <em>Developer & Designer</em><br />
+        <p>Created a mobile application to help people learn endangered languages through interactive exercises and cultural content.</p>
+        <span><i>January 2024-Present</i></span>
+      </li>
+      <li>
+        <strong>Linguistic Database</strong><br />
+        <em>Research Assistant</em><br />
+        <p>Contributed to building a comprehensive database of linguistic features for endangered languages in Southeast Asia.</p>
+        <span><i>March 2024-June 2024</i></span>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      // Hide all tab content
+      var tabcontent = document.getElementsByClassName("tab-content");
+      for (var i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      
+      // Remove active class from all tabs
+      var tabs = document.getElementsByClassName("tab");
+      for (var i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove("active");
+      }
+      
+      // Show the specific tab content and mark the button as active
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
 
 </body>
 </html>
