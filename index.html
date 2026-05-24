@@ -139,6 +139,49 @@
 </head>
 <body>
 
+  <!-- Welcome Popup -->
+<div id="welcome-overlay" style="
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.35);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Sans', sans-serif;
+">
+  <div style="
+    background: #fefefe; border-radius: 16px;
+    padding: 2rem 2rem 1.5rem; max-width: 360px;
+    width: 90%; text-align: center;
+    border: 0.5px solid #ddd;
+  ">
+    <div style="font-size: 1.6em; margin-bottom: 0.5rem;">👋</div>
+    <h2 style="font-size: 1.3em; font-weight: 500; margin: 0 0 0.4rem; color: #222;">hey, welcome!</h2>
+    <p style="font-size: 0.92em; color: #666; margin: 0 0 1.6rem; line-height: 1.5;">how do you want to learn more about Andrew?</p>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <button onclick="closePopup()" style="
+        background: #58c1e7; color: #fff; border: none;
+        padding: 0.75rem 1rem; border-radius: 10px;
+        font-size: 0.95em; font-family: inherit;
+        cursor: pointer; font-weight: 500;
+      ">explore the website →</button>
+      <button onclick="goRoblox()" style="
+        background: #fff; color: #222; border: 0.5px solid #ccc;
+        padding: 0.75rem 1rem; border-radius: 10px;
+        font-size: 0.95em; font-family: inherit;
+        cursor: pointer; font-weight: 500;
+      ">🎮 play the roblox game</button>
+    </div>
+    <p style="font-size: 0.75em; color: #aaa; margin-top: 0.6rem;">yes, this is real</p>
+  </div>
+</div>
+
+<script>
+  function closePopup() {
+    document.getElementById('welcome-overlay').style.display = 'none';
+  }
+  function goRoblox() {
+    window.location.href = 'YOUR_ROBLOX_GAME_LINK_HERE';
+  }
+</script>
+
   <div class="smallcaps">Last updated May 23rd, 2026</div>
   <h1>Andrew Naoki Ohmamiuda Haynes</h1>
 
