@@ -18,6 +18,13 @@
 
   * { box-sizing: border-box; }
 
+  #lightbox-caption {
+  margin-top: 10px;
+  font-size: 0.85em;
+  color: #d6d6db;
+  font-family: inherit;
+}
+  
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
@@ -82,7 +89,7 @@
     flex: 1;
     max-width: 230px;
   }
-
+  
   .bio-photo img {
     width: 100%;
     border-radius: 14px;
@@ -287,7 +294,7 @@
 
 <nav>
   <span class="nav-link active" data-tab="about">about</span>
-  <span class="nav-link" data-tab="research">research</span>
+  <span class="nav-link" data-tab="publications">publications</span>
   <span class="nav-link" data-tab="gallery">gallery</span>
   <span class="nav-link" data-tab="cv">cv</span>
 </nav>
@@ -301,7 +308,7 @@
     <div class="bio-wrap">
       <div class="bio-text">
         <p>
-          Hello, I'm Andrew! I'm an incoming freshman at Princeton, where I plan on majoring in
+          Hello, I'm Andrew! I'm an incoming freshman from Houston, Texas at Princeton, where I plan on majoring in
           <span class="highlight">Linguistics</span> and minoring in <span class="highlight">Computer Science</span>
           and <span class="highlight">East Asian Studies</span>. Broadly, I'm interested in exploring how
           <span class="highlight">computing</span> can support <span class="highlight">endangered language revitalization</span>
@@ -331,14 +338,18 @@
 
     <h2 class="news-heading">news</h2>
     <div class="news-spot">
+      <span class="date">May 05, 2026</span>
+      <span>I'll be presenting a paper on low-resource OCR at ComputEL-9 @ ACL 2026 in San Diego!</span>
+    </div>
+    <div class="news-spot">
       <span class="date">May 01, 2026</span>
-      <span>presenting "CoRSAL-OCR" at ACL 2026's endangered languages workshop!</span>
+      <span>I'm excited to announce that I will be attending Princeton for my undergraduate education!</span>
     </div>
   </div>
 
   <!-- RESEARCH -->
-  <div id="research" class="tab-panel">
-    <h2 class="section-title">research</h2>
+  <div id="publications" class="tab-panel">
+    <h2 class="section-title">publications</h2>
     <div class="plain-list">
       <div class="plain-item">
         <div class="title">CoRSAL-OCR: Evaluating Zero-Shot OCR for Language Archive Materials</div>
@@ -367,22 +378,56 @@
     <h2 class="section-title">gallery</h2>
     <div class="gallery-grid">
       <!-- Replace each placeholder div with: <div class="gallery-item"><img src="photos/yourphoto.jpg" alt=""></div> -->
-      <div class="gallery-item"><img src="001.png" alt=""></div> 
-      <div class="gallery-item"><img src="002.png" alt=""></div>
-      <div class="gallery-item"><img src="003.png" alt=""></div>
-      <div class="gallery-item"><img src="004.png" alt=""></div>
-      <div class="gallery-item"><img src="005.png" alt=""></div>
-      <div class="gallery-item"><img src="006.png" alt=""></div>
-      <div class="gallery-item"><img src="007.png" alt=""></div>
-      <div class="gallery-item"><img src="008.png" alt=""></div>
-      <div class="gallery-item"><img src="009.png" alt=""></div>
-      <div class="gallery-item"><img src="010.png" alt=""></div>
-      <div class="gallery-item"><img src="011.png" alt=""></div>
-      <div class="gallery-item"><img src="012.png" alt=""></div>
-      <div class="gallery-item"><img src="013.png" alt=""></div>
-      <div class="gallery-item"><img src="014.png" alt=""></div>
-      <div class="gallery-item"><img src="015.png" alt=""></div>
-      <div class="gallery-item"><img src="016.png" alt=""></div>
+<div class="gallery-item">
+  <img src="001.png" alt="" data-caption="me and adeela trying convenience store mitarashi dango and hanami dango (yum!) ✿">
+</div>
+      <div class="gallery-item">
+  <img src="002.png" alt="" data-caption="japan 2026 made it out of the gc (iris, andy, vibhan, adeela, and me)">
+</div>
+      <div class="gallery-item">
+  <img src="003.png" alt="" data-caption="seeing my cousin & japanese side of the family after 4 yrs & eating rlly good shine muscat grapes">
+</div>
+      <div class="gallery-item">
+  <img src="004.png" alt="" data-caption="meeting yt legend liza koshy in the streets">
+</div>
+      <div class="gallery-item">
+  <img src="005.png" alt="" data-caption="hook 'em horns w/ aditi">
+</div>
+      <div class="gallery-item">
+  <img src="006.png" alt="" data-caption="me & irene committing to princeton (go tigers!)">
+</div>
+      <div class="gallery-item">
+  <img src="007.png" alt="" data-caption="k-pop ending fairy @ final deca">
+</div>
+      <div class="gallery-item">
+  <img src="008.png" alt="" data-caption="getting crazy sunburnt in mexico">
+</div>
+      <div class="gallery-item">
+  <img src="009.png" alt="" data-caption="letting sadie drive natalia & i through the mountains...">
+</div>
+      <div class="gallery-item">
+  <img src="010.png" alt="" data-caption="aliza, anoushka, and i @ austin nsli-y alumni rep meetup">
+</div>
+      <div class="gallery-item">
+  <img src="011.png" alt="" data-caption="pictured: best ppl in the academy (my high school)!">
+</div>
+      <div class="gallery-item">
+  <img src="012.png" alt="" data-caption="goat teammates & best friends exploring the 2026 houston rodeo">
+</div>
+      <div class="gallery-item">
+  <img src="013.png" alt="" data-caption="deca district 4 team (vibhan & sitara!)">
+</div>
+      <div class="gallery-item">
+  <img src="014.png" alt="" data-caption="paradoxically, figure skating in texas">
+</div>
+      <div class="gallery-item">
+  <img src="015.png" alt="" data-caption="spooky snacks">
+</div>
+      <div class="gallery-item">
+  <img src="016.png" alt="" data-caption="throwback: 15th birthday while studying abroad in korea (thanks cohort-mates!) 보고 싶어~
+">
+</div>
+
     </div>
   </div>
 
@@ -415,14 +460,20 @@
 </script>
 
 <div id="lightbox" onclick="this.classList.remove('active')">
-  <img id="lightbox-img" src="" alt="" />
+  <div style="text-align:center;">
+    <img id="lightbox-img" src="" alt="" />
+    <div id="lightbox-caption"></div>
+  </div>
 </div>
 
 <script>
   document.querySelectorAll('.gallery-item img').forEach(img => {
-    img.addEventListener('click', () => {
-      document.getElementById('lightbox-img').src = img.src;
-      document.getElementById('lightbox').classList.add('active');
+  img.addEventListener('click', () => {
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-caption').textContent = img.dataset.caption || "";
+    document.getElementById('lightbox').classList.add('active');
+  });
+});
     });
   });
 </script>
