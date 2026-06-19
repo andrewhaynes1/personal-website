@@ -308,7 +308,7 @@
     <div class="bio-wrap">
       <div class="bio-text">
         <p>
-          Hello, I'm Andrew! I'm an incoming freshman from Houston, Texas at Princeton, where I plan on majoring in
+          Hello, I'm Andrew! I'm an incoming freshman from Houston at Princeton, where I plan on majoring in
           <span class="highlight">Linguistics</span> and minoring in <span class="highlight">Computer Science</span>
           and <span class="highlight">East Asian Studies</span>. Broadly, I'm interested in exploring how
           <span class="highlight">computing</span> can support <span class="highlight">endangered language revitalization</span>
@@ -459,7 +459,7 @@
   });
 </script>
 
-<div id="lightbox" onclick="this.classList.remove('active')">
+<div id="lightbox">
   <div style="text-align:center;">
     <img id="lightbox-img" src="" alt="" />
     <div id="lightbox-caption"></div>
@@ -467,11 +467,22 @@
 </div>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxCaption = document.getElementById("lightbox-caption");
+
   document.querySelectorAll('.gallery-item img').forEach(img => {
-  img.addEventListener('click', () => {
-    document.getElementById('lightbox-img').src = img.src;
-    document.getElementById('lightbox-caption').textContent = img.dataset.caption || "";
-    document.getElementById('lightbox').classList.add('active');
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxCaption.textContent = img.dataset.caption || "";
+      lightbox.classList.add('active');
+    });
+  });
+
+  // optional: click anywhere closes
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
   });
 });
 </script>
