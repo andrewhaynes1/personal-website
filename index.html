@@ -87,7 +87,7 @@
 
   .bio-photo {
     flex: 1;
-    max-width: 300px;
+    max-width: 400px;
   }
   
   .bio-photo img {
@@ -139,7 +139,16 @@
 
   /* ---------- Plain line lists (research / recognition) ---------- */
   .plain-list .plain-item {
-    padding: 12px 0;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .plain-list .plain-item:first-child {
+    padding-top: 0;
+  }
+
+  .plain-list .plain-item:last-child {
+    border-bottom: none;
   }
 
   .plain-list .plain-item .title {
@@ -188,6 +197,51 @@
 
   .plain-list .bullets li {
     margin-bottom: 4px;
+  }
+
+  /* ---------- Abstract toggle ---------- */
+  .pub-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .abs-toggle,
+  .pdf-link {
+    display: inline-block;
+    padding: 4px 14px;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--text-soft);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: none;
+    font-family: inherit;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .abs-toggle:hover,
+  .pdf-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+
+  .abstract-box {
+    display: none;
+    margin-top: 14px;
+    padding: 16px 18px;
+    border: 1px dashed var(--rule);
+    border-radius: 8px;
+    color: var(--text-soft);
+    font-size: 0.92em;
+    line-height: 1.6;
+  }
+
+  .abstract-box.open {
+    display: block;
   }
 
   /* ---------- Gallery ---------- */
@@ -303,12 +357,12 @@
 
   <!-- ABOUT -->
   <div id="about" class="tab-panel active">
-    <h1><span class="first">Andrew</span> <span class="rest">Naoki Ohmamiuda Haynes</span></h1>
+    <h1><span class="first">Andrew</span> <span class="rest">Haynes</span></h1>
 
     <div class="bio-wrap">
       <div class="bio-text">
         <p>
-          Hello, I'm Andrew! I'm an incoming freshman from Houston at Princeton, where I plan on majoring in
+          Howdy, I'm Andrew! I'm an incoming freshman at Princeton, where I plan on majoring in
           <span class="highlight">Linguistics</span> and minoring in <span class="highlight">Computer Science</span>
           and <span class="highlight">East Asian Studies</span>. Broadly, I'm interested in exploring how
           <span class="highlight">computing</span> can support <span class="highlight">endangered language revitalization</span>
@@ -351,10 +405,19 @@
   <div id="publications" class="tab-panel">
     <h2 class="section-title">publications</h2>
     <div class="plain-list">
+
       <div class="plain-item">
         <div class="title">CoRSAL-OCR: Evaluating Zero-Shot OCR for Language Archive Materials</div>
         <div class="sub">Luke Gessler and <strong>Andrew Haynes</strong> — Ninth Workshop on the Use of Computational Methods in the Study of Endangered Languages @ ACL, 2026</div>
+        <div class="pub-actions">
+          <button class="abs-toggle" data-target="abs-corsal">ABS</button>
+          <a class="pdf-link" href="corsal-ocr.pdf" target="_blank">PDF</a>
+        </div>
+        <div class="abstract-box" id="abs-corsal">
+          Language archives contain valuable linguistic materials that are undigitized and therefore difficult to access. Modern optical character recognition (OCR) systems have great potential to make these collections more accessible, but there are few system evaluations which can assess the quality of an OCR system specifically for language archive materials. We present CoRSAL-OCR, an OCR evaluation dataset of over 200 document pages with gold-standard transcriptions from two South Asian languages: Bodo (written in Devanagari) and Garo (written in Latin script). Using this dataset together with the 8-language AILLA-OCR benchmark, we evaluate four OCR systems: Tesseract, Google Cloud Vision, Gemini 3 Flash, and Qwen3.5-27B (an open-weight model). We find that vision language models (VLMs), when given appropriate prompts, achieve the lowest error rates on these datasets. However, prompt design has a large effect on VLM performance, with a detailed generic prompt reducing CER by up to six-fold compared to a minimal prompt. We release our dataset at <a href="https://github.com/larc-iu/corsal-ocr" target="_blank">github.com/larc-iu/corsal-ocr</a> to support further research on OCR for language archives.
+        </div>
       </div>
+
     </div>
   </div>
 
@@ -362,7 +425,7 @@
   <!-- CV -->
   <div id="cv" class="tab-panel">
     <h2 class="section-title">cv</h2>
-    <p style="color: var(--text-soft); margin-bottom: 20px;">You can download my full CV below.</p>
+    <p style="color: var(--text-soft); margin-bottom: 20px;"></p>
     <a href="cv.pdf" target="_blank" style="
       display: inline-block;
       background: var(--accent);
@@ -377,7 +440,6 @@
   <div id="gallery" class="tab-panel">
     <h2 class="section-title">gallery</h2>
     <div class="gallery-grid">
-      <!-- Replace each placeholder div with: <div class="gallery-item"><img src="photos/yourphoto.jpg" alt=""></div> -->
 <div class="gallery-item">
   <img src="001.png" alt="" data-caption="me and adeela trying convenience store mitarashi dango and hanami dango (yum!) ✿">
 </div>
@@ -455,6 +517,15 @@
 
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       document.getElementById(tab).classList.add('active');
+    });
+  });
+</script>
+
+<script>
+  document.querySelectorAll('.abs-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.getAttribute('data-target'));
+      target.classList.toggle('open');
     });
   });
 </script>
