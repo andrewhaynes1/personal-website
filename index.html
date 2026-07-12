@@ -366,17 +366,17 @@
     <div class="bio-wrap">
       <div class="bio-text">
         <p>
-          Howdy, I'm Andrew! I'm an incoming freshman at Princeton, where I plan on majoring in
-          <span class="highlight">Linguistics</span> and minoring in <span class="highlight">Computer Science</span>
-          and <span class="highlight">East Asian Studies</span>. Broadly, I'm interested in exploring how
-          <span class="highlight">computing</span> can support <span class="highlight">endangered language revitalization</span>
-          via data systems and technology that empower community-driven preservation efforts.
+       Howdy, I'm Andrew! I'm a freshman studying Linguistics and Computer Science at Princeton, with a focus on
+computational linguistics. Broadly, I'm interested in <span class="highlight">low-resource languages</span>,
+particularly endangered ones, and <span class="highlight">multilinguality</span> more broadly,
+as well as in bringing linguistic theory and psycholinguistic insight more directly into
+natural language processing and machine learning research.
         </p>
         <p>
           I also love learning languages: I speak English (Native), Japanese (Heritage/N2), Mandarin (Intermediate),
           and Korean (Intermediate-Mid/ACTFL)!
         </p>
-        <p>If you're working on something related or have ideas to share, I'd love to hear from you!</p>
+        <p>If you're working on something related, I'd love to hear from you!</p>
       </div>
       <div class="bio-photo">
         <img src=me.jpg />
@@ -397,11 +397,7 @@
     <h2 class="news-heading">news</h2>
     <div class="news-spot">
       <span class="date">May 05, 2026</span>
-      <span>I'll be presenting a paper on low-resource OCR at ComputEL-9 @ ACL 2026 in San Diego!</span>
-    </div>
-    <div class="news-spot">
-      <span class="date">May 01, 2026</span>
-      <span>I'm excited to announce that I will be attending Princeton for my undergraduate education!</span>
+      <span>Excited to share that I'll be presenting my first paper on low-resource OCR at ComputEL-9 @ ACL 2026 in San Diego!</span>
     </div>
   </div>
 
@@ -410,17 +406,17 @@
     <h2 class="section-title">publications</h2>
     <div class="plain-list">
 
-      <div class="plain-item">
-        <div class="title">CoRSAL-OCR: Evaluating Zero-Shot OCR for Language Archive Materials</div>
-        <div class="sub">Luke Gessler and <strong>Andrew Haynes</strong> — Ninth Workshop on the Use of Computational Methods in the Study of Endangered Languages @ ACL, 2026</div>
-        <div class="pub-actions">
-          <button class="abs-toggle" data-target="abs-corsal">ABS</button>
-          <a class="pdf-link" href="corsal-ocr.pdf" target="_blank">PDF</a>
-        </div>
-        <div class="abstract-box" id="abs-corsal">
-          Language archives contain valuable linguistic materials that are undigitized and therefore difficult to access. Modern optical character recognition (OCR) systems have great potential to make these collections more accessible, but there are few system evaluations which can assess the quality of an OCR system specifically for language archive materials. We present CoRSAL-OCR, an OCR evaluation dataset of over 200 document pages with gold-standard transcriptions from two South Asian languages: Bodo (written in Devanagari) and Garo (written in Latin script). Using this dataset together with the 8-language AILLA-OCR benchmark, we evaluate four OCR systems: Tesseract, Google Cloud Vision, Gemini 3 Flash, and Qwen3.5-27B (an open-weight model). We find that vision language models (VLMs), when given appropriate prompts, achieve the lowest error rates on these datasets. However, prompt design has a large effect on VLM performance, with a detailed generic prompt reducing CER by up to six-fold compared to a minimal prompt. We release our dataset at <a href="https://github.com/larc-iu/corsal-ocr" target="_blank">github.com/larc-iu/corsal-ocr</a> to support further research on OCR for language archives.
-        </div>
-      </div>
+<div class="plain-item">
+  <div class="title">CoRSAL-OCR: Evaluating Zero-Shot OCR for Language Archive Materials</div>
+  <div class="sub">Luke Gessler and <strong>Andrew Haynes</strong>. 2026. In Proceedings of the Ninth Workshop on the Use of Computational Methods in the Study of Endangered Languages (ComputEL-9), pages 125–135, San Diego, California, USA. Association for Computational Linguistics.</div>
+  <div class="pub-actions">
+    <button class="abs-toggle" data-target="abs-corsal-ocr">ABS</button>
+    <a class="pdf-link" href="https://aclanthology.org/2026.computel-1.14/" target="_blank">PDF</a>
+  </div>
+  <div class="abstract-box" id="abs-corsal-ocr">
+    Language archives contain valuable linguistic materials that are undigitized and therefore difficult to access. Modern optical character recognition (OCR) systems have great potential to make these collections more accessible, but there are few system evaluations which can assess the quality of an OCR system specifically for language archive materials. We present CoRSAL-OCR, an OCR evaluation dataset of over 200 document pages with gold-standard transcriptions from two South Asian languages: Bodo (written in Devanagari) and Garo (written in Latin script). Using this dataset together with the 8-language AILLA-OCR benchmark, we evaluate four OCR systems: Tesseract, Google Cloud Vision, Gemini 3 Flash, and Qwen3.5-27B (an open-weight model). We find that vision language models (VLMs), when given appropriate prompts, achieve the lowest error rates on these datasets. However, prompt design has a large effect on VLM performance, with a detailed generic prompt reducing CER by up to six-fold compared to a minimal prompt. We release our dataset at <a href="https://github.com/larc-iu/corsal-ocr" target="_blank">github.com/larc-iu/corsal-ocr</a> to support further research on OCR for language archives.
+  </div>
+</div>
 
     </div>
   </div>
